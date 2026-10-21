@@ -47,22 +47,23 @@ section{padding:clamp(3.5rem,9vw,7rem) 0}
 .hero__bg{position:absolute;inset:-120px;background:var(--tile);background-size:120px 120px;animation:tiles 70s linear infinite}
 .hero__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 55%,rgba(14,53,86,0) 0%,rgba(14,53,86,.85) 70%)}
 @keyframes tiles{to{transform:translate(120px,120px)}}
-.hero__grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1rem,4vw,3rem);align-items:center}
+.hero__grid{position:relative;display:grid;grid-template-columns:1fr;gap:clamp(1rem,3vw,2rem);justify-items:center;text-align:center}
+.hero__stage{order:-1}
 .word{font-family:var(--head);font-weight:700;font-size:clamp(4rem,13vw,9.5rem);line-height:1;color:var(--saffron);display:flex;overflow:hidden;padding:.05em 0 .12em}
 .word span{display:inline-block;transform:translateY(110%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
 .word span:nth-child(2){animation-delay:.08s}.word span:nth-child(3){animation-delay:.16s}.word span:nth-child(4){animation-delay:.24s}.word span:nth-child(5){animation-delay:.32s}.word span:nth-child(6){animation-delay:.4s}
 .tr--hero{font-size:1.5rem;color:#9FD9D6;margin:0 0 1rem}
-.hero h1{font-size:clamp(1.8rem,4vw,2.9rem);max-width:17ch;margin-bottom:1rem}
-.hero .lead{margin-bottom:2rem}
-.acts{display:flex;gap:.8rem;flex-wrap:wrap}
-.hero__stage{position:relative;max-width:30rem;width:100%;justify-self:center;padding-top:31%}
+.hero h1{font-size:clamp(1.8rem,4.4vw,3.2rem);max-width:24ch;margin:0 auto 1rem}
+.hero .lead{margin:0 auto 2rem}
+.acts{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.hero__stage{position:relative;max-width:26rem;width:100%;justify-self:center;padding-top:31%}
 .hero__art{width:100%}
 .inscr{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible}
 .inscr__ru{font-family:var(--head);font-weight:700;font-size:72px;fill:var(--saffron);letter-spacing:.04em;animation:track 1.8s cubic-bezier(.2,.8,.2,1) .15s both}
 .inscr__ar{font-family:"Aref Ruqaa","El Messiri",serif;font-weight:700;font-size:50px;fill:#9FD9D6;animation:fadein 1.6s .9s both}
 @keyframes track{from{letter-spacing:.5em;opacity:0}to{letter-spacing:.04em;opacity:1}}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
-@media(max-width:860px){.hero__grid{grid-template-columns:1fr}.hero__stage{max-width:22rem;order:-1}}
+@media(max-width:860px){.hero__stage{max-width:22rem}}
 
 /* джезва */
 .cez{width:100%;height:auto;overflow:visible}
