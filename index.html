@@ -8,7 +8,7 @@
 <meta name="description" content="Джезва – турецкая кофейня в Сочи: кофе на горячем песке, чай в стаканчиках-тюльпанах, лукум и пахлава. Меню, бронь столика. Демо-версия.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Aref+Ruqaa:wght@700&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,7 +39,6 @@
   <div class="hero__bg" aria-hidden="true"></div>
   <div class="wrap hero__grid">
     <div class="hero__text">
-      <div class="word" aria-label="Джезва"><span>Д</span><span>ж</span><span>е</span><span>з</span><span>в</span><span>а</span></div>
       <p class="tr tr--hero">Türk kahvesi</p>
       <h1>Кофе на горячем песке и сладости по-турецки</h1>
       <p class="lead">Варим в медных джезвах, подаём с лукумом и пахлавой. Пять минут от сочинской набережной.</p>
@@ -48,7 +47,22 @@
         <a class="btn btn--line" href="#stolik">Забронировать столик</a>
       </div>
     </div>
-    <div class="hero__art" id="heroArt"></div>
+    <div class="hero__stage">
+      <svg class="inscr" viewBox="0 0 440 250" role="img" aria-label="Джезва">
+        <defs><path id="arcT" d="M 80 235 A 140 140 0 0 1 360 235"/></defs>
+        <g fill="none" stroke-linecap="round">
+          <path d="M 8 235 A 212 212 0 0 1 432 235" stroke="#F2B53B" stroke-opacity=".55" stroke-width="1.5"/>
+          <path d="M 18 235 A 202 202 0 0 1 422 235" stroke="#4FC3BF" stroke-opacity=".7" stroke-width="1.2"/>
+          <path d="M 102 235 A 118 118 0 0 1 338 235" stroke="#4FC3BF" stroke-opacity=".55" stroke-width="1.2"/>
+          <path d="M 110 235 A 110 110 0 0 1 330 235" stroke="#F2B53B" stroke-opacity=".5" stroke-width="3" stroke-dasharray="0.1 8"/>
+        </g>
+        <path d="M14.1 207.4 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(276 14.1 213.4)"/><circle cx="23.1" cy="171.0" r="2.4" fill="#4FC3BF"/><path d="M40.7 125.5 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(300 40.7 131.5)"/><circle cx="66.2" cy="96.5" r="2.4" fill="#4FC3BF"/><path d="M98.3 61.5 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(324 98.3 67.5)"/><circle cx="135.8" cy="45.9" r="2.4" fill="#4FC3BF"/><path d="M177.0 26.5 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(348 177.0 32.5)"/><circle cx="220.0" cy="28.0" r="2.4" fill="#4FC3BF"/><path d="M263.0 26.5 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(372 263.0 32.5)"/><circle cx="304.2" cy="45.9" r="2.4" fill="#4FC3BF"/><path d="M341.7 61.5 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(396 341.7 67.5)"/><circle cx="373.8" cy="96.5" r="2.4" fill="#4FC3BF"/><path d="M399.3 125.5 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(420 399.3 131.5)"/><circle cx="416.9" cy="171.0" r="2.4" fill="#4FC3BF"/><path d="M425.9 207.4 l5 6 l-5 6 l-5 -6z" fill="#F2B53B" transform="rotate(444 425.9 213.4)"/>
+        <path d="M220 8 l9 15 l-9 -5 l-9 5z" fill="#F2B53B"/>
+        <text class="inscr__ru"><textPath href="#arcT" startOffset="50%" text-anchor="middle">Джезва</textPath></text>
+        <text class="inscr__ar" x="220" y="176" text-anchor="middle" direction="rtl" lang="ar">جذوة</text>
+      </svg>
+      <div class="hero__art" id="heroArt"></div>
+    </div>
   </div>
 </section>
 
@@ -97,22 +111,25 @@
     <div class="cupbox" id="cupbox">
       <div class="cupbox__cup" id="cup">
         <svg viewBox="0 0 240 240" aria-hidden="true">
-          <defs><linearGradient id="cw" x1="0" x2="1"><stop offset="0" stop-color="#E9E4DA"/><stop offset=".4" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D8D2C6"/></linearGradient></defs>
-          <ellipse cx="120" cy="206" rx="104" ry="20" fill="#0E3556"/>
-          <ellipse cx="120" cy="200" rx="104" ry="18" fill="#1C9C9A"/>
-          <ellipse cx="120" cy="198" rx="92" ry="14" fill="#F5F2EB"/>
-          <path d="M60 84 H180 L168 178 Q120 196 72 178 Z" fill="url(#cw)"/>
-          <path d="M64 108 H176" stroke="#1C9C9A" stroke-width="3"/>
-          <path d="M66 120 H174" stroke="#0E3556" stroke-width="1.5"/>
-          <g fill="#D63D32"><circle cx="90" cy="140" r="4"/><circle cx="120" cy="146" r="4"/><circle cx="150" cy="140" r="4"/></g>
-          <path d="M180 100 C 214 98 214 150 172 154" fill="none" stroke="#F0EBE0" stroke-width="9" stroke-linecap="round"/>
-          <ellipse cx="120" cy="84" rx="60" ry="10" fill="#4A2A18"/>
-          <ellipse cx="120" cy="82" rx="52" ry="7" fill="#C98B4E"/>
+          <defs>
+            <linearGradient id="fcu" x1="0" x2="1"><stop offset="0" stop-color="#8A421F"/><stop offset=".18" stop-color="#D9824A"/><stop offset=".34" stop-color="#F6B481"/><stop offset=".52" stop-color="#D98048"/><stop offset=".8" stop-color="#B8642F"/><stop offset="1" stop-color="#78361A"/></linearGradient>
+            <linearGradient id="ftin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F0EA"/><stop offset=".5" stop-color="#BDBAB2"/><stop offset="1" stop-color="#8E8B84"/></linearGradient>
+            <clipPath id="fcl"><path d="M64 84 H176 L162 176 Q120 192 78 176 Z"/></clipPath>
+          </defs>
+          <ellipse cx="120" cy="208" rx="106" ry="20" fill="#5A2A12"/>
+          <ellipse cx="120" cy="202" rx="106" ry="19" fill="url(#fcu)"/>
+          <ellipse cx="120" cy="201" rx="88" ry="14" fill="#9A4F26"/>
+          <ellipse cx="120" cy="200" rx="80" ry="11" fill="none" stroke="#150A05" stroke-width="1.4" stroke-opacity=".7"/>
+          <path d="M182 100 C 216 98 216 150 174 154" fill="none" stroke="#B8642F" stroke-width="9" stroke-linecap="round"/>
+          <path d="M64 84 H176 L162 176 Q120 192 78 176 Z" fill="url(#fcu)"/>
+          <g clip-path="url(#fcl)"><g fill="none" stroke="#150A05" stroke-width="1.8" stroke-linecap="round">
+            <path d="M60 110 Q120 122 180 110"/><path d="M60 118 Q120 130 180 118"/><path d="M70 150 q7 -12 14 0"/><path d="M84 150 q7 -12 14 0"/><path d="M98 150 q7 -12 14 0"/><path d="M112 150 q7 -12 14 0"/><path d="M126 150 q7 -12 14 0"/><path d="M140 150 q7 -12 14 0"/><path d="M154 150 q7 -12 14 0"/><path d="M168 150 q7 -12 14 0"/><path d="M60 160 Q120 172 180 160"/></g>
+            <path d="M76 92 C 74 124 78 154 86 176" fill="none" stroke="#FFEACB" stroke-opacity=".5" stroke-width="6" stroke-linecap="round"/></g>
+          <ellipse cx="120" cy="84" rx="58" ry="11" fill="url(#ftin)"/>
+          <ellipse cx="120" cy="86" rx="50" ry="8" fill="#6E6B64"/>
         </svg>
       </div>
-      <div class="cupbox__saucer" id="saucer" aria-live="polite">
-        <p class="cupbox__hint">Нажмите «Перевернуть чашку»</p>
-      </div>
+      <div class="cupbox__saucer" id="saucer" aria-live="polite"></div>
     </div>
   </div>
 </section>
