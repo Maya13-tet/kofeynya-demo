@@ -59,7 +59,7 @@ section{padding:clamp(3.5rem,9vw,7rem) 0}
 .hero__stage{position:relative;max-width:26rem;width:100%;justify-self:center;padding-top:31%}
 .hero__art{width:100%}
 .inscr{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible}
-.inscr__ru{font-family:var(--head);font-weight:700;font-size:72px;fill:var(--saffron);letter-spacing:.04em;animation:track 1.8s cubic-bezier(.2,.8,.2,1) .15s both}
+.inscr__ru{font-family:var(--head);font-weight:700;font-size:56px;fill:var(--saffron);letter-spacing:.04em;animation:track 1.8s cubic-bezier(.2,.8,.2,1) .15s both}
 .inscr__ar{font-family:"Aref Ruqaa","El Messiri",serif;font-weight:700;font-size:50px;fill:#9FD9D6;animation:fadein 1.6s .9s both}
 @keyframes track{from{letter-spacing:.5em;opacity:0}to{letter-spacing:.04em;opacity:1}}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
