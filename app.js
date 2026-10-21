@@ -50,87 +50,81 @@ function showCat(cat) {
 }
 showCat("Кофе");
 
-/* ===== джезва на песке: старая медь, чеканка, патина ===== */
-function rng(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
+/* ===== турка на песке: полированная медь, чёрная гравировка, точёная ручка ===== */
 function cezve(uid) {
-  const r = rng(7 + uid.charCodeAt(0));
-  let dents = "";
-  for (let i = 0; i < 90; i++) {
-    const y = 150 + r() * 146, t = (y - 150) / 146;
-    const half = 52 + Math.sin(Math.min(1, t * 1.15) * Math.PI * .62) * 62;
-    const x = 210 + (r() * 2 - 1) * half, rad = 3.5 + r() * 4.5;
-    dents += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rad.toFixed(1)}" fill="url(#dn${uid})"/>`;
+  let band = "";
+  for (let x = 96; x < 330; x += 30) {
+    band += `<path d="M${x} 254 C ${x + 4} 234 ${x + 22} 230 ${x + 24} 242 C ${x + 25} 252 ${x + 12} 254 ${x + 12} 246"/>`
+         + `<path class="leaf" d="M${x + 14} 262 q 11 -24 28 -22 q -6 20 -28 22z"/>`
+         + `<circle class="dot" cx="${x + 30}" cy="228" r="2.2"/>`;
   }
-  let zig = "";
-  for (let x = 98; x < 326; x += 16) zig += `<path d="M${x} 244 l8 -13 l8 13" />`;
-  let tul = "";
-  for (let x = 106; x < 322; x += 32) tul += `<path d="M${x + 8} 266 q-6 -8 0 -16 q6 8 0 16 M${x + 8} 266 q-9 -3 -9 -11 M${x + 8} 266 q9 -3 9 -11"/>`;
-  return `<svg class="cez" viewBox="0 0 420 440" data-step="3" role="img" aria-label="Старинная медная джезва на горячем песке, из неё поднимается пена и пар">
+  let neck = "";
+  for (let x = 140; x < 290; x += 12) neck += `<path d="M${x} 196 l6 -8 l6 8"/>`;
+  let cupBand = "";
+  for (let x = 44; x < 104; x += 12) cupBand += `<path d="M${x} 396 q 6 -12 12 0"/>`;
+  return `<svg class="cez" viewBox="0 0 420 440" data-step="3" role="img" aria-label="Медная турка с гравировкой и чёрной деревянной ручкой на горячем песке, из неё поднимается пена и пар">
   <defs>
     <radialGradient id="gl${uid}" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F2B53B" stop-opacity=".9"/><stop offset="1" stop-color="#F2B53B" stop-opacity="0"/></radialGradient>
-    <linearGradient id="cu${uid}" x1="0" x2="1"><stop offset="0" stop-color="#4A2210"/><stop offset=".22" stop-color="#8E4B26"/><stop offset=".4" stop-color="#C0804A"/><stop offset=".62" stop-color="#8A4A25"/><stop offset="1" stop-color="#3F1D0E"/></linearGradient>
+    <linearGradient id="cu${uid}" x1="0" x2="1"><stop offset="0" stop-color="#8A421F"/><stop offset=".16" stop-color="#D9824A"/><stop offset=".32" stop-color="#F6B481"/><stop offset=".5" stop-color="#D98048"/><stop offset=".78" stop-color="#B8642F"/><stop offset="1" stop-color="#78361A"/></linearGradient>
+    <linearGradient id="tin${uid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F0EA"/><stop offset=".5" stop-color="#BDBAB2"/><stop offset="1" stop-color="#8E8B84"/></linearGradient>
     <linearGradient id="sa${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDCE96"/><stop offset=".55" stop-color="#CFA262"/><stop offset="1" stop-color="#C79A57" stop-opacity="0"/></linearGradient>
-    <linearGradient id="soot${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B0A04" stop-opacity="0"/><stop offset="1" stop-color="#1B0A04" stop-opacity=".7"/></linearGradient>
-    <radialGradient id="dn${uid}" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#FFD9A8" stop-opacity=".42"/><stop offset=".55" stop-color="#7A3D1C" stop-opacity=".05"/><stop offset="1" stop-color="#2A0F05" stop-opacity=".42"/></radialGradient>
-    <clipPath id="fc${uid}"><path d="M0 0 H420 V130 H274 A64 13 0 0 1 146 130 H0 Z"/></clipPath>
-    <clipPath id="bd${uid}"><path id="bp${uid}" d="M146 130 C 158 150 166 166 160 186 C 118 208 96 252 104 298 L316 298 C 324 252 302 208 260 186 C 254 166 262 150 274 130 Z"/></clipPath>
+    <linearGradient id="wd${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A332E"/><stop offset=".35" stop-color="#14100D"/><stop offset="1" stop-color="#0A0705"/></linearGradient>
+    <clipPath id="fc${uid}"><path d="M0 0 H420 V130 H264 A54 12 0 0 1 156 130 H0 Z"/></clipPath>
+    <clipPath id="bd${uid}"><path id="bp${uid}" d="M156 130 C 160 150 170 166 168 190 C 162 240 138 280 124 312 Q 120 322 132 322 L 288 322 Q 300 322 296 312 C 282 280 258 240 252 190 C 250 166 260 150 264 130 Z"/></clipPath>
+    <clipPath id="cp${uid}"><path d="M34 372 H114 L104 410 Q74 420 44 410 Z"/></clipPath>
   </defs>
   <circle class="glow" cx="210" cy="300" r="200" fill="url(#gl${uid})"/>
   <path d="M-20 440 C 0 340 90 276 210 272 C 330 276 420 340 440 440 Z" fill="url(#sa${uid})"/>
   <g class="steam" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round">
     <path d="M182 92 C 164 66 198 48 180 16"/><path d="M210 96 C 192 70 228 52 208 18"/><path d="M238 92 C 220 68 254 48 236 14"/>
   </g>
-  <g transform="translate(0 22)"><g class="pot">
-    <!-- ручка: латунь на заклёпках, тёмный стержень с кольцом -->
-    <path d="M286 208 C 326 200 366 172 392 124" fill="none" stroke="#4A2C12" stroke-width="9" stroke-linecap="round"/>
-    <path d="M290 206 L336 190" stroke="#B58A3C" stroke-width="12" stroke-linecap="round"/>
-    <path d="M290 206 L336 190" stroke="#E6C679" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" transform="translate(0 -3)"/>
-    <circle cx="396" cy="116" r="8" fill="none" stroke="#4A2C12" stroke-width="4"/>
-    <g fill="#6D4B1B"><circle cx="300" cy="203" r="2.6"/><circle cx="314" cy="198" r="2.6"/><circle cx="328" cy="193" r="2.6"/></g>
-    <!-- носик -->
-    <path d="M152 126 Q 134 118 124 108 Q 138 138 158 142 Z" fill="#8A4A25"/>
+  <g transform="translate(0 -10)"><g class="pot">
+    <!-- ручка: латунное кольцо у горла и длинная чёрная точёная рукоять -->
+    <path d="M262 134 L300 110" stroke="#C99A3E" stroke-width="10" stroke-linecap="round"/>
+    <path d="M262 131 L298 108" stroke="#F2D58A" stroke-opacity=".6" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M296 112 L384 56" stroke="url(#wd${uid})" stroke-width="13" stroke-linecap="round"/>
+    <g fill="#14100D" stroke="#3A332E" stroke-width="1"><circle cx="318" cy="98" r="8.5"/><circle cx="340" cy="84" r="9.5"/><circle cx="362" cy="70" r="8.5"/></g>
+    <path d="M300 106 L380 55" stroke="#fff" stroke-opacity=".22" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="291" y="104" width="9" height="16" rx="3" fill="#C99A3E" transform="rotate(-32 295 112)"/>
+    <circle cx="390" cy="52" r="7" fill="none" stroke="#C99A3E" stroke-width="3.5"/>
+    <!-- носик-кромка -->
+    <path d="M158 126 Q 148 124 143 116 Q 150 134 164 138 Z" fill="#C06E3A"/>
     <!-- корпус -->
     <use href="#bp${uid}" fill="url(#cu${uid})"/>
     <g clip-path="url(#bd${uid})">
-      ${dents}
-      <rect x="90" y="150" width="240" height="150" fill="url(#soot${uid})" opacity=".0"/>
-      <rect x="90" y="236" width="240" height="64" fill="url(#soot${uid})"/>
-      <!-- чеканный пояс -->
-      <g fill="none" stroke="#2E1408" stroke-opacity=".55" stroke-width="1.6" stroke-linejoin="round">
-        <path d="M96 226 Q 210 240 324 226"/><path d="M96 232 Q 210 246 324 232"/>
-        <g transform="translate(0 4)">${zig}</g>
-        <path d="M96 252 Q 210 266 324 252"/>
-        <g transform="translate(0 6)">${tul}</g>
+      <g fill="none" stroke="#150A05" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M90 204 Q 210 222 330 204"/><path d="M90 212 Q 210 230 330 212"/>
+        <path d="M90 270 Q 210 288 330 270"/><path d="M90 278 Q 210 296 330 278"/>
+        <g transform="translate(0 -10)">${band}</g>
+        <g stroke-width="1.6">${neck}</g>
+        <path d="M148 168 Q 210 178 272 168" stroke-width="1.6"/>
       </g>
-      <!-- зелёная патина -->
-      <g fill="#58B39A" fill-opacity=".38">
-        <path d="M152 176 q-6 8 -2 20 q6 -6 8 -14 z"/><path d="M262 178 q4 12 10 18 q4 -10 -2 -18 z"/>
-        <ellipse cx="128" cy="266" rx="9" ry="5"/><ellipse cx="296" cy="272" rx="11" ry="6"/><ellipse cx="204" cy="290" rx="14" ry="4"/>
-        <path d="M118 286 q-3 6 0 12 h8 q2 -6 -2 -12 z"/>
-      </g>
-      <!-- блик -->
-      <path d="M142 214 C 124 238 118 266 122 292" fill="none" stroke="#FFE7C2" stroke-opacity=".28" stroke-width="7" stroke-linecap="round"/>
+      <style>.leaf{fill:#150A05}.dot{fill:#150A05}</style>
+      <path d="M150 190 C 138 236 118 268 108 292" fill="none" stroke="#FFEACB" stroke-opacity=".5" stroke-width="6" stroke-linecap="round"/>
+      <path d="M270 200 C 280 236 296 262 306 288" fill="none" stroke="#FFD8B0" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+      <rect x="90" y="304" width="240" height="22" fill="#2A1008" opacity=".28"/>
     </g>
-    <!-- горловина: луженая внутри -->
-    <ellipse cx="210" cy="130" rx="64" ry="13" fill="#2A1008"/>
-    <ellipse cx="210" cy="131" rx="58" ry="10" fill="#1A0A04"/>
-    <path d="M146 130 A64 13 0 0 1 274 130" fill="none" stroke="#B9B2A4" stroke-width="4"/>
+    <!-- горло: луженое серебро -->
+    <ellipse cx="210" cy="130" rx="58" ry="13" fill="url(#tin${uid})"/>
+    <ellipse cx="210" cy="132" rx="50" ry="9.5" fill="#6E6B64"/>
+    <path d="M156 130 A54 12 0 0 1 264 130" fill="none" stroke="#E9E6DF" stroke-width="3.5"/>
     <g clip-path="url(#fc${uid})"><g class="foam">
-      <path d="M154 160 L154 130 C 152 92 268 92 266 130 L266 160 Z" fill="#E7B677"/>
-      <path d="M154 130 C 180 142 240 142 266 130 L266 160 L154 160 Z" fill="#C98B4E"/>
+      <path d="M152 160 L152 130 C 150 92 270 92 268 130 L268 160 Z" fill="#E7B677"/>
+      <path d="M152 130 C 180 142 240 142 268 130 L268 160 L152 160 Z" fill="#C98B4E"/>
       <g fill="#F6D9A8" fill-opacity=".8"><circle cx="188" cy="112" r="5"/><circle cx="214" cy="104" r="6"/><circle cx="238" cy="114" r="4"/><circle cx="204" cy="121" r="3"/></g>
     </g></g>
-    <path d="M146 130 A64 13 0 0 0 274 130" fill="none" stroke="#B9B2A4" stroke-width="4"/>
-    <path d="M146 130 A64 13 0 0 0 274 130" fill="none" stroke="#6B2F14" stroke-width="1.4" transform="translate(0 2.5)"/>
+    <path d="M156 130 A54 12 0 0 0 264 130" fill="none" stroke="#F4D9BC" stroke-width="3.5"/>
   </g></g>
-  <path d="M20 440 C 40 346 120 290 210 286 C 300 290 380 346 400 440 Z" fill="url(#sa${uid})"/>
+  <path d="M0 440 C 16 336 76 300 130 298 L 290 298 C 344 300 404 336 420 440 Z" fill="url(#sa${uid})"/>
   <g class="cup">
-    <path d="M36 366 H112 L106 408 Q74 420 42 408 Z" fill="#F1E9D8"/>
-    <path d="M38 378 H110" stroke="#C9A24A" stroke-width="3"/>
-    <path d="M40 388 H108" stroke="#8E4B26" stroke-width="1.5"/>
-    <path d="M112 374 C 130 374 130 396 108 398" fill="none" stroke="#C9A24A" stroke-width="5" stroke-linecap="round"/>
-    <ellipse cx="74" cy="366" rx="38" ry="7" fill="#5A2E15"/>
-    <ellipse cx="74" cy="365" rx="32" ry="5" fill="#C98B4E"/>
+    <path d="M112 382 C 138 380 138 406 106 404" fill="none" stroke="#B8642F" stroke-width="6" stroke-linecap="round"/>
+    <path d="M34 372 H114 L104 410 Q74 420 44 410 Z" fill="url(#cu${uid})"/>
+    <g clip-path="url(#cp${uid})"><g fill="none" stroke="#150A05" stroke-width="1.6" stroke-linecap="round">
+      <path d="M34 384 Q74 392 114 384"/><path d="M36 402 Q74 410 112 402"/>${cupBand}</g>
+      <path d="M42 378 C 40 392 44 402 50 410" fill="none" stroke="#FFEACB" stroke-opacity=".5" stroke-width="4" stroke-linecap="round"/></g>
+    <ellipse cx="74" cy="372" rx="40" ry="8" fill="url(#tin${uid})"/>
+    <ellipse class="fill" cx="74" cy="373" rx="34" ry="5.8" fill="#5A2E15"/>
+    <ellipse cx="74" cy="372.5" rx="29" ry="4.4" fill="#C98B4E"/>
   </g>
 </svg>`;
 }
