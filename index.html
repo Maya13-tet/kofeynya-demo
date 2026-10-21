@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Джезва – турецкая кофейня в Сочи</title>
+<meta name="description" content="Джезва – турецкая кофейня в Сочи: кофе на горячем песке, чай в стаканчиках-тюльпанах, лукум и пахлава. Меню, бронь столика. Демо-версия.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <clipPath id="ogee" clipPathUnits="objectBoundingBox">
+    <path d="M0,1 L0,0.42 C0,0.26 0.36,0.2 0.5,0 C0.64,0.2 1,0.26 1,0.42 L1,1 Z"/>
+  </clipPath>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Джезва</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#menu">Меню</a>
+      <a href="#para">Что к кофе</a>
+      <a href="#pesok">Как варим</a>
+      <a href="#gushcha">Гадание</a>
+      <a href="#stolik">Столик</a>
+    </nav>
+    <a class="btn btn--sm" href="#stolik">Забронировать</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <div class="word" aria-label="Джезва"><span>Д</span><span>ж</span><span>е</span><span>з</span><span>в</span><span>а</span></div>
+      <p class="tr tr--hero">Türk kahvesi</p>
+      <h1>Кофе на горячем песке и сладости по-турецки</h1>
+      <p class="lead">Варим в медных джезвах, подаём с лукумом и пахлавой. Пять минут от сочинской набережной.</p>
+      <div class="acts">
+        <a class="btn" href="#menu">Смотреть меню</a>
+        <a class="btn btn--line" href="#stolik">Забронировать столик</a>
+      </div>
+    </div>
+    <div class="hero__art" id="heroArt"></div>
+  </div>
+</section>
+
+<section id="menu" class="light">
+  <div class="wrap">
+    <h2>Меню</h2>
+    <p class="lead">Кофе мелкого помола варим в джезве. Сахар добавляем по вашему вкусу: <i>sade</i> – без сахара, <i>az şekerli</i> – чуть-чуть, <i>orta</i> – средний, <i>şekerli</i> – сладкий.</p>
+    <div class="tabs" role="tablist" id="tabs" aria-label="Разделы меню"></div>
+    <ul class="menu" id="menuList"></ul>
+  </div>
+</section>
+
+<section id="para" class="dark">
+  <div class="wrap duo">
+    <div class="duo__pic">
+      <div class="frame"><img class="ogee" src="assets/sweets.webp" alt="Пахлава, лукум, инжир и чай в стаканчике-тюльпане на подносе с синим орнаментом" width="1200" height="900" loading="lazy"></div>
+    </div>
+    <div>
+      <h2>Что подать к кофе</h2>
+      <p class="lead">В Турции к кофе принято приносить что-нибудь сладкое. Выберите кофе, и мы подскажем, с чем он лучше сочетается.</p>
+      <div class="chips" id="chips" role="group" aria-label="Выберите кофе"></div>
+      <div class="pair" id="pair" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="pesok" class="teal">
+  <div class="wrap">
+    <h2>Как мы варим на песке</h2>
+    <p class="lead">Четыре шага, около пяти минут. Выбирайте шаг и смотрите, что происходит с джезвой.</p>
+    <div class="ritual">
+      <ol class="rsteps" id="rsteps"></ol>
+      <div class="ritual__art" id="ritualArt"></div>
+    </div>
+  </div>
+</section>
+
+<section id="gushcha" class="light">
+  <div class="wrap fortune">
+    <div>
+      <h2>Кофейная гуща</h2>
+      <p class="lead">В Турции после кофе принято переворачивать чашку на блюдце и читать по узорам гущи. Попробуйте: перевернуть чашку можно и здесь.</p>
+      <button class="btn" id="flip">Перевернуть чашку</button>
+      <p class="note">Гадание шуточное, всерьёз его принимать не нужно.</p>
+    </div>
+    <div class="cupbox" id="cupbox">
+      <div class="cupbox__cup" id="cup">
+        <svg viewBox="0 0 240 240" aria-hidden="true">
+          <defs><linearGradient id="cw" x1="0" x2="1"><stop offset="0" stop-color="#E9E4DA"/><stop offset=".4" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D8D2C6"/></linearGradient></defs>
+          <ellipse cx="120" cy="206" rx="104" ry="20" fill="#0E3556"/>
+          <ellipse cx="120" cy="200" rx="104" ry="18" fill="#1C9C9A"/>
+          <ellipse cx="120" cy="198" rx="92" ry="14" fill="#F5F2EB"/>
+          <path d="M60 84 H180 L168 178 Q120 196 72 178 Z" fill="url(#cw)"/>
+          <path d="M64 108 H176" stroke="#1C9C9A" stroke-width="3"/>
+          <path d="M66 120 H174" stroke="#0E3556" stroke-width="1.5"/>
+          <g fill="#D63D32"><circle cx="90" cy="140" r="4"/><circle cx="120" cy="146" r="4"/><circle cx="150" cy="140" r="4"/></g>
+          <path d="M180 100 C 214 98 214 150 172 154" fill="none" stroke="#F0EBE0" stroke-width="9" stroke-linecap="round"/>
+          <ellipse cx="120" cy="84" rx="60" ry="10" fill="#4A2A18"/>
+          <ellipse cx="120" cy="82" rx="52" ry="7" fill="#C98B4E"/>
+        </svg>
+      </div>
+      <div class="cupbox__saucer" id="saucer" aria-live="polite">
+        <p class="cupbox__hint">Нажмите «Перевернуть чашку»</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stolik" class="dark">
+  <div class="wrap book">
+    <div>
+      <div class="frame frame--sm"><img class="ogee" src="assets/interior.webp" alt="Зал кофейни: стена из изникской плитки, медные джезвы на полке и окно с видом на море" width="1200" height="900" loading="lazy"></div>
+      <h2 style="margin-top:2.2rem">Джезва на Навагинской</h2>
+      <p class="lead">Мы открылись, чтобы в Сочи можно было выпить кофе так, как его варят в Турции: не спеша, на песке, с прозрачной водой и сладким к чашке. Медные джезвы мы привезли из Газиантепа, а плитку для стены заказали в Кютахье.</p>
+      <dl class="facts">
+        <div><dt>Адрес</dt><dd>Сочи, ул. Навагинская, 9<br>пять минут пешком до моря</dd></div>
+        <div><dt>Часы работы</dt><dd>Ежедневно с 8:00 до 23:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+78620000000">+7 (862) 000-00-00</a></dd></div>
+      </dl>
+    </div>
+    <form class="panel" id="form" novalidate>
+      <h3>Забронировать столик</h3>
+      <fieldset class="seg" id="guests"><legend>Сколько вас</legend></fieldset>
+      <label class="fld"><span>День</span><select id="day"></select></label>
+      <label class="fld"><span>Время</span><select id="time"></select></label>
+      <fieldset class="seg" id="place"><legend>Где сидеть</legend></fieldset>
+      <label class="fld"><span>Ваше имя</span><input id="name" autocomplete="name"></label>
+      <label class="fld"><span>Телефон</span><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7"></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn btn--full" type="submit">Забронировать</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Джезва, Сочи. Это демонстрационная версия: название, цены и контакты вымышлены, фотографии созданы ИИ, а бронь нигде не сохраняется.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
