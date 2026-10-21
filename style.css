@@ -178,3 +178,9 @@ footer{background:var(--lazur-d);color:#B8C7D6;padding:2rem 0 3rem;font-size:.95
   .word span{transform:none}
   html{scroll-behavior:auto}
 }
+
+/* заголовки и подводки по центру */
+h1,h2{text-align:center}
+.lead{margin-left:auto;margin-right:auto;text-align:center}
+.tabs{justify-content:center}
+.chips{justify-content:center}
