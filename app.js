@@ -69,16 +69,16 @@ function cezve(uid) {
     <linearGradient id="tin${uid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F0EA"/><stop offset=".5" stop-color="#BDBAB2"/><stop offset="1" stop-color="#8E8B84"/></linearGradient>
     <linearGradient id="sa${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDCE96"/><stop offset=".55" stop-color="#CFA262"/><stop offset="1" stop-color="#C79A57" stop-opacity="0"/></linearGradient>
     <linearGradient id="wd${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A332E"/><stop offset=".35" stop-color="#14100D"/><stop offset="1" stop-color="#0A0705"/></linearGradient>
-    <clipPath id="fc${uid}"><path d="M0 0 H420 V130 H264 A54 12 0 0 1 156 130 H0 Z"/></clipPath>
+    <linearGradient id="mk${uid}" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient><mask id="mm${uid}" maskUnits="userSpaceOnUse" x="-10" y="270" width="440" height="180"><rect x="-10" y="270" width="440" height="180" fill="url(#mk${uid})"/></mask><clipPath id="fc${uid}"><path d="M0 0 H420 V130 H264 A54 12 0 0 1 156 130 H0 Z"/></clipPath>
     <clipPath id="bd${uid}"><path id="bp${uid}" d="M156 130 C 160 150 170 166 168 190 C 162 240 138 280 124 312 Q 120 322 132 322 L 288 322 Q 300 322 296 312 C 282 280 258 240 252 190 C 250 166 260 150 264 130 Z"/></clipPath>
     <clipPath id="cp${uid}"><path d="M34 372 H114 L104 410 Q74 420 44 410 Z"/></clipPath>
   </defs>
   <circle class="glow" cx="210" cy="300" r="200" fill="url(#gl${uid})"/>
-  <path d="M-20 440 C 0 340 90 276 210 272 C 330 276 420 340 440 440 Z" fill="url(#sa${uid})"/>
+  <g ${uid==="h"?"":`mask="url(#mm${uid})"`}><path d="M${uid==="h"?-1600:-10} ${uid==="h"?392:440} V284 H${uid==="h"?2020:430} V${uid==="h"?392:440} Z" fill="url(#sa${uid})" opacity=".9"/></g>
   <g class="steam" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round">
     <path d="M182 92 C 164 66 198 48 180 16"/><path d="M210 96 C 192 70 228 52 208 18"/><path d="M238 92 C 220 68 254 48 236 14"/>
   </g>
-  <g transform="translate(0 -10)"><g class="pot">
+  <g class="big" transform="translate(0 -10)"><g class="pot">
     <!-- ручка: латунное кольцо у горла и длинная чёрная точёная рукоять -->
     <path d="M262 134 L300 110" stroke="#C99A3E" stroke-width="10" stroke-linecap="round"/>
     <path d="M262 131 L298 108" stroke="#F2D58A" stroke-opacity=".6" stroke-width="2.5" stroke-linecap="round"/>
@@ -115,7 +115,7 @@ function cezve(uid) {
     </g></g>
     <path d="M156 130 A54 12 0 0 0 264 130" fill="none" stroke="#F4D9BC" stroke-width="3.5"/>
   </g></g>
-  <path d="M0 440 C 16 336 76 300 130 298 L 290 298 C 344 300 404 336 420 440 Z" fill="url(#sa${uid})"/>
+  <g ${uid==="h"?"":`mask="url(#mm${uid})"`}><path d="M${uid==="h"?-1600:-10} ${uid==="h"?392:440} V296 H${uid==="h"?2020:430} V${uid==="h"?392:440} Z" fill="url(#sa${uid})"/></g>
   <g class="cup">
     <path d="M112 382 C 138 380 138 406 106 404" fill="none" stroke="#B8642F" stroke-width="6" stroke-linecap="round"/>
     <path d="M34 372 H114 L104 410 Q74 420 44 410 Z" fill="url(#cu${uid})"/>
